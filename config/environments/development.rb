@@ -16,6 +16,15 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # Default URL (DLP)
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Tells the application to using smtp to send outbound emails via a symbol - mail.rb file using sendgrid
+  config.action_mailer.delivery_method = :smtp
+
+  # This sets the email delivery behavior: FALSE = no email, TRUE = email
+  config.action_mailer.perform_deliveries = true
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
