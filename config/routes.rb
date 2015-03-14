@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  #get 'user/show'
+
+  resources :tasks
   devise_for :users
+  #resources :users, only: [:create]
+
   get 'welcome/index'
 
   get 'welcome/about'

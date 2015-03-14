@@ -1,0 +1,32 @@
+
+<div class='panel-primary'>
+  <div class='panel-heading'>  
+    <h3 class='panel-title'>Tasks</h3>
+  </div>
+  <div class='panel-body'> These tasks will expire in 7 days.
+  </div>
+  <table class='table'>
+    <tr>
+      <th> Complete </th>
+      <th> Description </th>
+      <th> Expires at </th>
+    </tr>
+    <% tasks.each do |task| %>
+      <tr>
+        <td>  <%= link_to task, method: :delete do %>
+                <button type="button" class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button> 
+              <% end %>
+        </td>
+
+        <td> <%= task.title %></td>
+        <td> <%= distance_of_time_in_words_to_now(task.expires_at)%></td>
+
+      </tr>
+    <% end %>
+  </table>
+    <div class='panel-footer'>
+      <%= render partial: 'form'%>
+    </div>
+
+</div>
+
