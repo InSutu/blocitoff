@@ -19,7 +19,7 @@ gem 'devise' #for user authentication
 gem 'pundit' #for object authroization in Rails apps
 gem 'bootstrap-sass' #for style elements
 gem 'figaro' #environment variables - secure keys
-
+gem 'whenever' #automates cron jobs
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
